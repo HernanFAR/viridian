@@ -1,28 +1,34 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 3</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 3</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      
-      <ExploreContainer name="Tab 3 page" />
-    </ion-content>
+    <base-layout page-default-back-link="/" :show-header="true">
+      <template v-slot:title>Graficos de consumo</template>
+      <template v-slot:content>
+        <ion-header class="ion-text-center ion-margin-top">
+          <ion-title class="ion-margin-bottom">Estadisticas del agua</ion-title>
+          <div>
+            <MonthlyChart :labelConsumption="'Consumo'" :labelProduction="'Producción'"></MonthlyChart>
+          </div>
+        </ion-header>
+        <ion-header class="ion-text-center ion-margin-top">
+          <ion-title class="ion-margin-bottom">Estadisticas de electricidad</ion-title>
+          <div>
+            <MonthlyChart :labelConsumption="'Consumo'" :labelProduction="'Producción'"></MonthlyChart>
+          </div>
+        </ion-header>
+      </template>
+    </base-layout>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonPage, IonTitle } from '@ionic/vue';
+import MonthlyChart from '@/components/Charts/MonthlyChart.vue';
+import BaseLayout from '@/components/BaseLayout.vue';
 
 export default  {
   name: 'Tab3',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
+  components: { 
+    IonPage, MonthlyChart, BaseLayout, IonTitle
+  }
 }
 </script>
