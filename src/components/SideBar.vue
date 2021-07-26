@@ -37,13 +37,19 @@
 </template>
 
 <script lang="ts">
-import { IonMenu, IonContent, IonIcon, IonLabel } from '@ionic/vue'
+import { 
+  IonMenu, IonContent, IonIcon, 
+  IonLabel, IonTitle, IonToolbar,
+  IonItem, IonList, IonHeader
+} from '@ionic/vue'
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "BaseLayout",
   components: {
-    IonContent, IonIcon, IonLabel, IonMenu
+    IonContent, IonIcon, IonLabel, 
+    IonMenu, IonTitle, IonToolbar,
+    IonItem, IonList, IonHeader
   }
 })
 </script>
