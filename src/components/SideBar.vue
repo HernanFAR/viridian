@@ -2,34 +2,42 @@
   <ion-menu side="start" content-id="main-content">
     <ion-header>
       <ion-toolbar translucent>
-        <ion-title>Menu</ion-title>
+        <ion-title>Materiales a comprar</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
+      <ion-item>
+        <ion-label><b>Para el proyecto paneles</b></ion-label>
+      </ion-item>
       <ion-list>
         <ion-item>
-          <ion-icon name="mail" slot="start"></ion-icon>
-          <ion-label>Inbox</ion-label>
+          <ion-label>Elemento A - Cantidad: 5 </ion-label>
+          <ion-checkbox slot="end"></ion-checkbox>
         </ion-item>
         <ion-item>
-          <ion-icon name="paper-plane" slot="start"></ion-icon>
-          <ion-label>Outbox</ion-label>
+          <ion-label>Elemento B - 3x2 m </ion-label>
+          <ion-checkbox slot="end"></ion-checkbox>
         </ion-item>
         <ion-item>
-          <ion-icon name="heart" slot="start"></ion-icon>
-          <ion-label>Favorites</ion-label>
+          <ion-label>Elemento C - 4kg</ion-label> 
+          <ion-checkbox slot="end"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-label><b>Para el proyecto Torre eolica</b></ion-label>
+      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label>Elemento D - Cantidad: 5 </ion-label>
+          <ion-checkbox slot="end"></ion-checkbox>
         </ion-item>
         <ion-item>
-          <ion-icon name="archive" slot="start"></ion-icon>
-          <ion-label>Archived</ion-label>
+          <ion-label>Elemento E - 3x2 m </ion-label>
+          <ion-checkbox slot="end"></ion-checkbox>
         </ion-item>
         <ion-item>
-          <ion-icon name="trash" slot="start"></ion-icon>
-          <ion-label>Trash</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="warning" slot="start"></ion-icon>
-          <ion-label>Spam</ion-label>
+          <ion-label>Elemento F - 4kg</ion-label> 
+          <ion-checkbox slot="end"></ion-checkbox>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -38,18 +46,34 @@
 
 <script lang="ts">
 import { 
-  IonMenu, IonContent, IonIcon, 
-  IonLabel, IonTitle, IonToolbar,
-  IonItem, IonList, IonHeader
+  IonMenu, IonContent, IonLabel, 
+  IonTitle, IonToolbar, IonItem, 
+  IonList, IonHeader
 } from '@ionic/vue'
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "BaseLayout",
   components: {
-    IonContent, IonIcon, IonLabel, 
+    IonContent, IonLabel, 
     IonMenu, IonTitle, IonToolbar,
     IonItem, IonList, IonHeader
+  },
+  data() {
+    return {
+      showFirst: false,
+      showSecond: false
+    }
+  },
+  methods: {
+    changeValueFirst() {
+      console.log("XD")
+      this.showFirst = !this.showFirst;
+    },
+    changeValueSecond() {
+      console.log("DX")
+      this.showSecond = !this.showSecond;
+    }
   }
 })
 </script>
