@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
+import Recomendations from '../views/Recomendations.vue';
 import Tabs from '../views/Tabs.vue';
 import NotFound from '@/views/NotFound.vue';
 
@@ -17,8 +18,18 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/tabs/Map'
       },
       {
-        path: 'Recomendations',
-        component: () => import('@/views/Recomendations.vue')
+        path: 'Recomendations/',
+        component: Recomendations,
+        children: [{
+          path: 'SearchProjects',
+          component: () => import('@/views/SearchProjects.vue')
+        }, {
+          path: 'Saves',
+          component: () => import('@/views/Saves.vue')
+        }, {
+          path: 'MyProjects',
+          component: () => import('@/views/MyProjects.vue')
+        }]
       },
       {
         path: 'Map',
